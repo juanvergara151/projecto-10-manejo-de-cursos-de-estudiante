@@ -1,0 +1,313 @@
+#include <iostream>
+
+using namespace std;
+
+struct estudiante {
+
+	//atributos
+	int codigo,eleccion_materias;
+	string nombre_y_apellido;
+	
+	//metodo
+	
+	
+};
+
+struct semestre {
+    
+    double nota_semestre;
+    
+};
+
+struct fisica {
+    
+    double nota1F,nota2F,nota3F,nota4F,nota_semestreF;
+    int codigoF,valor_creditosF;
+    string departamentoF;
+    
+   
+    
+};
+
+struct calculo {
+    
+    double nota1C,nota2C,nota3C,nota4C,nota_semestreC;
+    int codigoC,valor_creditosC;
+    string departamentoC;
+    
+    
+    
+};
+
+struct logica_computacional{
+    
+    double nota1L,nota2L,nota3L,nota4L,nota_semestreL;
+    int codigoL,valor_creditosL;
+    string departamentoL;
+    
+    
+    
+    
+};
+
+struct competencias_comunicativas{
+    
+    double nota1CC,nota2CC,nota3CC,nota4CC,nota_semestreCC;
+    int codigoCC,valor_creditosCC; 
+    string departamentoCC;
+    
+    
+};
+
+int main(){
+    
+    int codigo,valor_creditosF = 0, valor_creditosC = 0, valor_creditosL = 0, valor_creditosCC = 0,NcortesF = 4 , NcortesC = 4, NcortesL = 4, NcortesCC = 3;
+    int codigoF = 0,codigoCC= 0, codigoC = 0, codigoL = 0;
+    float nota_final_semestre,suma_ponderada,total_creditos,promedio,nota_semestreF = 0, nota_semestreC = 0, nota_semestreL = 0, nota_semestreCC = 0;
+    string nombre_y_apellido,departamentoCC = "x", departamentoL = "y", departamentoF = "w" ,departamentoC = "z";
+    char op;
+    float notas[4][4] = {0};
+  
+    cout<<"hola dime tu nombre y apellido:"<<endl;
+    getline(cin,nombre_y_apellido);
+    cout<<"muy bien, ahora dame tu codigo estudiantil: "<<endl;
+    cin>>codigo;
+    
+
+    do{
+   cout << "MENU" << endl;
+   cout << "1. fisica" << endl;
+   cout << "2. calculo" << endl;
+   cout << "3. logica computacional" << endl;
+   cout << "4. competencias comunicativas "<<endl;
+   cout << "5. Estudiante nota e informacion final"<<endl;
+   cout << "6. informacion de los cursos"<<endl;
+   cout << "7. matris"<<endl;
+   cout << "8. terminar"<<endl;
+   cin >> op;
+   switch(op){
+   case '1':{ 
+    
+    fisica datos;
+    
+    datos.departamentoF = "FISICA";
+    datos.valor_creditosF = 4;
+    datos.codigoF = 17444001;
+    
+    
+    cout << "Ingrese la nota del primer corte: ";
+    cin >> datos.nota1F;
+    cout << "Ingrese la nota del segundo corte: ";
+    cin >> datos.nota2F;
+    cout << "Ingrese la nota del tercer corte: ";
+    cin >> datos.nota3F;
+    cout << "Ingrese la nota del cuarto corte: ";
+    cin >> datos.nota4F;
+    
+    datos.nota_semestreF =  0.2 * datos.nota1F + 0.3 * datos.nota2F + 0.2 * datos.nota3F + 0.3 * datos.nota4F;
+    cout<<"tu nota final de fisica es "<< datos.nota_semestreF<<endl;
+    
+    
+     
+    nota_semestreF = datos.nota_semestreF;
+    valor_creditosF = datos.valor_creditosF;
+    codigoF = datos.codigoF;
+    departamentoF = datos.departamentoF;
+    
+    notas[0][0] = datos.nota1F;
+    notas[0][1] = datos.nota2F;     //supuestas matrices
+    notas[0][2] = datos.nota3F;
+    notas[0][3] = datos.nota4F;
+    
+    
+   break;}
+   case '2':{      calculo datos;
+    
+    datos.departamentoC = "MATEMATICAS";
+    datos.valor_creditosC = 4;
+    datos.codigoC = 1743400;
+    
+    
+    cout << "Ingrese la nota del primer corte: ";
+    cin >> datos.nota1C;
+    cout << "Ingrese la nota del segundo corte: ";
+    cin >> datos.nota2C;
+    cout << "Ingrese la nota del tercer corte: ";
+    cin >> datos.nota3C;
+    cout << "Ingrese la nota del cuarto corte: ";
+    cin >> datos.nota4C;
+    
+    datos.nota_semestreC =  0.2 * datos.nota1C + 0.3 * datos.nota2C + 0.2 * datos.nota3C + 0.3 * datos.nota4C;
+    cout<<"tu nota final de calculo es "<< datos.nota_semestreC<<endl;
+    
+    
+    
+    nota_semestreC = datos.nota_semestreC;
+    valor_creditosC = datos.valor_creditosC;
+    codigoC = datos.codigoC;
+    departamentoC = datos.departamentoC;
+    
+    notas[1][0] = datos.nota1C;
+    notas[1][1] = datos.nota2C;      //supuestas matrices
+    notas[1][2] = datos.nota3C;
+    notas[1][3] = datos.nota4C;
+    
+    
+   break;}
+   case '3':{  logica_computacional datos;
+    
+    datos.departamentoL = "SISTEMAS";
+    datos.valor_creditosL = 3;
+    datos.codigoL = 50493101;
+    
+    
+    cout << "Ingrese la nota del primer corte: ";
+    cin >> datos.nota1L;
+    cout << "Ingrese la nota del segundo corte: ";
+    cin >> datos.nota2L;
+    cout << "Ingrese la nota del tercer corte: ";
+    cin >> datos.nota3L;
+    cout << "Ingrese la nota del cuarto corte: ";
+    cin >> datos.nota4L;
+    
+    datos.nota_semestreL =  0.2 * datos.nota1L + 0.25 * datos.nota2L + 0.25 * datos.nota3L + 0.3 * datos.nota4L;
+    cout<<"tu nota final de logica computacional es "<< datos.nota_semestreL<<endl;
+    
+    
+    
+    nota_semestreL = datos.nota_semestreL;
+    valor_creditosL = datos.valor_creditosL;
+    codigoL = datos.codigoL;
+    departamentoL = datos.departamentoL;
+    
+    notas[2][0] = datos.nota1L;
+    notas[2][1] = datos.nota2L;  //supuestas matrices
+    notas[2][2] = datos.nota3L;
+    notas[2][3] = datos.nota4L;
+    
+    
+   break;}
+   case '4': { competencias_comunicativas datos;
+    
+    datos.departamentoCC = "HUMANIDADES";
+    datos.valor_creditosCC = 2;
+    datos.codigoCC = 20062001;
+    
+    
+    cout << "Ingrese la nota del primer corte: ";
+    cin >> datos.nota1CC;
+    cout << "Ingrese la nota del segundo corte: ";
+    cin >> datos.nota2CC;
+    cout << "Ingrese la nota del tercer corte: ";
+    cin >> datos.nota3CC;
+
+    
+    datos.nota_semestreCC =  0.35 * datos.nota1CC + 0.35 * datos.nota2CC + 0.30 * datos.nota3CC;
+    cout<<"tu nota final de competencias comunicativas es "<< datos.nota_semestreCC<<endl;
+    
+    
+
+    nota_semestreCC = datos.nota_semestreCC;
+    valor_creditosCC = datos.valor_creditosCC;
+    codigoCC = datos.codigoCC;
+    departamentoCC = datos.departamentoCC;
+    
+    notas[3][0] = datos.nota1CC;
+    notas[3][1] = datos.nota2CC;
+    notas[3][2] = datos.nota3CC;
+    notas[3][3] = datos.nota4CC;
+    
+    
+    
+   break;}
+   case '5': { //todo 
+   
+   float suma_ponderada, total_creditos , nota_final_semestre;
+   
+
+   
+   suma_ponderada = nota_semestreF * valor_creditosF + nota_semestreC * valor_creditosC + nota_semestreL * valor_creditosL + nota_semestreCC * valor_creditosCC;
+   total_creditos = valor_creditosF + valor_creditosC + valor_creditosL + valor_creditosCC;
+   nota_final_semestre = suma_ponderada / total_creditos;
+   
+   cout<<"hola "<< nombre_y_apellido << " con codigo "<<codigo<<endl;
+   
+   
+  if (nota_final_semestre < 3.25){
+       
+       cout<<"tu nota final es "<< nota_final_semestre <<" lamentamos decirte que estas en prueba academica por tener una nota menor a 3.25 "<<endl;
+       
+   }
+   else if(nota_final_semestre >= 4.75){
+       
+       
+       cout<<"tu nota final es "<< nota_final_semestre <<" estamos contentos de decirte que eres candidato a beca por tener una note sobre 4.75 "<<endl;
+       
+   }
+   else{
+       
+       cout<<"tu nota final es "<< nota_final_semestre<<endl;
+   }
+   
+   break;}
+   case '6' :{ 
+       
+       cout<<"la informacion de fisica es\n" <<"codigo: "<<codigoF<<endl
+       <<"departamento: "<<departamentoF<<endl<<"creditos: " <<valor_creditosF<<endl;
+       
+       cout<<"la informacion de calculo es\n" <<"codigo: "<<codigoC<<endl
+       <<"departamento: "<<departamentoC<<endl<<"creditos: " <<valor_creditosC<<endl; 
+       
+       cout<<"la informacion de logica computacional es\n" <<"codigo: "<<codigoL<<endl
+       <<"departamento: "<<departamentoL<<endl<<"creditos: " <<valor_creditosL<<endl; 
+       
+       cout<<"la informacion de competencias comunicativas es\n" <<"codigo: "<<codigoCC<<endl
+       <<"departamento: "<<departamentoCC<<endl<<"creditos: " <<valor_creditosCC<<endl; 
+       
+       
+   break;}
+   case '7' :{ 
+       
+       cout << "\nResumen de notas por curso (matriz):\n";
+string nombresCursos[4] = {"Fisica", "Calculo", "Logica computacional", "Competencias comunicativas"};
+for (int i = 0; i < 4; i++) {
+    cout << nombresCursos[i] << ": ";
+    for (int j = 0; j < 4; j++) {
+        
+        if (i == 3 && j == 3) continue; 
+        cout << notas[i][j] << " ";
+    }
+    cout << endl;
+}
+
+   break;}
+   case '8' :{ cout << "Saliendo del programa...";
+   break;}
+   default:{ cout << "Opción invalida";
+   break;}
+ }
+}while(op!='8');
+    
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
